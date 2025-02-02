@@ -8,16 +8,18 @@ import NotFoundPage from './pages/NotFoundPage';
 import ContactsPage from './pages/ContactsPage';
 import RegistrationPage from './pages/RegistrationPage';
 
-import { fetchContacts } from './redux/contactsOps';
-import { selectError, selectLoading } from './redux/contactsSlice';
+// import { fetchContacts } from './redux/contactsOps';
+
 import Layout from './components/Layout/Layout';
+import { refreshUserThunk } from './redux/auth/operations';
+import { selectError, selectLoading } from './redux/contacts/selectors';
 
 
 const App = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchContacts());   
+        dispatch(refreshUserThunk());   
     }, [dispatch]);
 
     const isError = useSelector(selectError);

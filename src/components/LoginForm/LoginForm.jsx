@@ -1,6 +1,8 @@
 import { Field, Form, Formik } from "formik";
 import s from './LoginForm.module.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logInThunk } from "../../redux/auth/operations";
 
 
 const LoginForm = () => {
@@ -8,8 +10,13 @@ const LoginForm = () => {
         password: '',
         email: ''
     };
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     const handleSubmit = (values, options) => {
         console.log(values);
+        dispatch(logInThunk(values)).unwrap().then(() => navigate('/'));
         options.resetForm();
         
     };
