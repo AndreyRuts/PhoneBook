@@ -1,0 +1,10 @@
+.wrapper {
+  display: flex;
+  gap: 28px;
+  padding-top: 12px;
+  padding-left: 30px;
+}
+.links {
+  text-decoration: none;
+  color: white;
+}
