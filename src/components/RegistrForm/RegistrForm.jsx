@@ -1,5 +1,6 @@
 import { Field, Form, Formik } from "formik";
 import s from './RegistrForm.module.css';
+import { Link } from "react-router-dom";
 
 
 const RegistrForm = () => {
@@ -32,6 +33,9 @@ const RegistrForm = () => {
                             <Field className={s.registrField} name='password' type='password'/>
                         </label>
                         <button className={s.btn} type="submit">Registr</button>
+                        <p className={s.redirect}>Already have account?
+                            <Link className={s.link} to='/login'> Log in</Link>
+                        </p>
                     </Form>
                 </Formik>
             </div>
