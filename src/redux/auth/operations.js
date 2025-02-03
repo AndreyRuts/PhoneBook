@@ -12,7 +12,7 @@ const clearAuthHeader = () => {
 };
 
 
-export const registerThunk = createAsyncThunk('auth/signup', async (credentials, thunkApi) => {
+export const registerThunk = createAsyncThunk('auth/register', async (credentials, thunkApi) => {
     try {
         const { data } = await axios.post('/users/signup', credentials);
         setAuthHeader(data.token);

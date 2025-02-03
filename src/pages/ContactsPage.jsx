@@ -21,7 +21,7 @@ const ContactsPage = () => {
         <>
             <ContactForm />
             <SearchBox />
-            <div>{isLoading && 'Loading...'}</div>
+            <div>{isLoading && <p>Loading...</p>}</div>
             <ContactList />
         </>
     );

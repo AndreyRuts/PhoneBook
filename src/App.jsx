@@ -10,6 +10,8 @@ import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
 import ContactsPage from './pages/ContactsPage';
 import RegistrationPage from './pages/RegistrationPage';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import RestrictedRoute from './components/RestrictedRoute/RestrictedRoute';
 
 
 const App = () => {
@@ -22,12 +24,23 @@ const App = () => {
     return (
         <>
             <Routes>
-                <Route path='/' element={<Layout />}>
-                    <Route path='/login' element={<LoginPage />} />
-                    <Route path='/register' element={<RegistrationPage />} />
-                    <Route index element={<HomePage />} />
-                    <Route path='/contacts' element={<ContactsPage />} />
-                    <Route path='*' element={<NotFoundPage />} />
+                
+                <Route path='/' element={<Layout/>}>
+                    <Route path='/login' element={
+                        <RestrictedRoute>
+                            <LoginPage />
+                        </RestrictedRoute>} />
+                    <Route path='/register' element={
+                        <RestrictedRoute>
+                            <RegistrationPage />
+                        </RestrictedRoute>} />
+                    <Route index element={<HomePage />}/>
+                    <Route path='/contacts'
+                        element={
+                            <PrivateRoute>
+                                <ContactsPage/>
+                            </PrivateRoute>}/>
+                    <Route path='*' element={<NotFoundPage/>} />
                 </Route>
             </Routes>
         </>
