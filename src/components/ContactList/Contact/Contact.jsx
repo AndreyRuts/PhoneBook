@@ -1,6 +1,7 @@
-import s from './Contact.module.css';
 import { useDispatch } from 'react-redux';
+
 import { deleteContactThunk } from '../../../redux/contacts/operations';
+import s from './Contact.module.css';
 
 
 const Contact = ({ id, name, number }) => {
@@ -18,5 +19,6 @@ const Contact = ({ id, name, number }) => {
         </>
     );
 }; 
+
 
 export default Contact;

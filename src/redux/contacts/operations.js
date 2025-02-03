@@ -12,18 +12,16 @@ export const fetchContactsThunk = createAsyncThunk('contacts/fetchAll',
         }
     },
 );
-
 export const addContactThunk = createAsyncThunk('contacts/addContact',
     async (newContact, thukAPI) => {
         try {
             const { data } = await axios.post('/contacts', newContact);           
-            return { ...data, id: Number(data.id) };
+            return data;
         } catch (error) {
             return thukAPI.rejectWithValue(error.message);
         }
     },
 );
-
 export const deleteContactThunk = createAsyncThunk('contacts/deleteContact',
     async (contactId, thukAPI) => {
         try {

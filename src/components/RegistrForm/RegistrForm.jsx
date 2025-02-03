@@ -1,8 +1,9 @@
-import { Field, Form, Formik } from "formik";
-import s from './RegistrForm.module.css';
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { Field, Form, Formik } from "formik";
+
 import { registerThunk } from "../../redux/auth/operations";
+import s from './RegistrForm.module.css';
 
 
 const RegistrForm = () => {
@@ -16,7 +17,6 @@ const RegistrForm = () => {
     const navigate = useNavigate();
     
     const handleSubmit = (values, options) => {
-        console.log(values);
         dispatch(registerThunk(values)).unwrap().then(() => navigate('/'));
         options.resetForm();
         
@@ -49,5 +49,6 @@ const RegistrForm = () => {
         </>
     );
 };
+
 
 export default RegistrForm;
