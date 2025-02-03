@@ -20,7 +20,7 @@ const ContactForm = () => {
     });
     
     return (
-        <div className={s.formWrapper}>
+        <div className={s.wrapper}>
             <Formik onSubmit={handleSubmit} initialValues={initValues} validationSchema={schema}>
                 <Form className={s.form}>
                     <label className={s.formLable}>

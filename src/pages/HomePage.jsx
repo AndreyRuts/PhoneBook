@@ -1,6 +1,9 @@
+import { FaPhoneFlip } from "react-icons/fa6";
+
+
 const styles = {
   container: {
-    minHeight: 'calc(100vh - 50px)',
+    minHeight: 'calc(50vh - 50px)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -15,9 +18,9 @@ const styles = {
 const HomePage = () => {
     return (
         <>
-            <div style={styles.container}>
-                <h1 style={styles.title}>My App home page<span>💁‍♀️</span></h1>
-            </div>
+          <div style={styles.container}>
+            <h1 style={styles.title}>Phonebook App <FaPhoneFlip /></h1><p>Simple application for React education</p>
+          </div>
         </>
     )
 };

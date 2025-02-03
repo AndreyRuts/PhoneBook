@@ -15,7 +15,7 @@ const SearchBox = () => {
 
     return (
         <div className={s.searchBoxWrapper}>
-            <p>Find contacts by name</p>
+            <p className={s.text}>Find contacts by name</p>
             <input
                 className={s.searchBoxInput}
                 onChange={handleChange}

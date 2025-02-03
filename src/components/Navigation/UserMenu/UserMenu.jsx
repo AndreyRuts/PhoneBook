@@ -13,7 +13,7 @@ const UserMenu = () => {
     return (
         <div className={s.wrapper}>
             <p>Welcome, {user.name}</p>
-            <Link to='/'>
+            <Link to='/' className={s.link}>
                 <button className={s.btn} type="button" onClick={() => dispatch(logOutThunk())}>
                     Logout
                 </button>

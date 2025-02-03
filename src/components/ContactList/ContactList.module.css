@@ -1,5 +1,7 @@
-.contactList{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-} 
+.contactList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-left: 0;
+  margin-left: 12px;
+}

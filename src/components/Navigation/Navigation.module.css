@@ -8,3 +8,6 @@
   text-decoration: none;
   color: white;
 }
+.links:hover {
+  color: gold;
+}

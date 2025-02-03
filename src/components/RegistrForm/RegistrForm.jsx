@@ -41,7 +41,7 @@ const RegistrForm = () => {
                         </label>
                         <button className={s.btn} type="submit">Registr</button>
                         <p className={s.redirect}>Already have account?
-                            <Link className={s.link} to='/login'> Log in</Link>
+                            <Link className={s.link} to='/login'>Log in</Link>
                         </p>
                     </Form>
                 </Formik>

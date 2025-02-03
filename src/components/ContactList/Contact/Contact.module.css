@@ -1,21 +1,24 @@
-.listItem{
-    display: flex;
-    gap: 52px;
-    border: 2px solid black;
-    border-radius: 6px;
-    width: 320px;
-    height: 90px;
-    padding-top: 16px;
-    padding-left: 30px;
+.listItem {
+  display: flex;
+  border: 1px solid black;
+  border-radius: 6px;
+  width: 374px;
+  height: 90px;
+  padding-left: 8px;
+  justify-content: space-between;
+  background-color: rgba(110, 110, 110, 0.226);
 }
-
-.delBtn{
-    height: 30px;
-    width: 80px;
-    border-radius: 4px;
-    margin-top: 14px;
+.textContainer {
+  /* margin-left: 30px; */
+  margin-top: 18px;
+  max-width: 230px;
 }
-
-.text{
-    font-size: 20px;
+.text {
+  font-size: 20px;
+  border: none;
+  /* text-align: center; */
+  background-color: transparent;
+}
+.itemCont {
+  display: flex;
 }
