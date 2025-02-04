@@ -28,17 +28,17 @@ const slice = createSlice({
                 state.token = action.payload.token;
             })
             .addCase(logOutThunk.fulfilled, (state) => {
-                state.user = {name: null, email: null};
+                state.user = { name: null, email: null };
                 state.isLoggedIn = false;
                 state.token = null;
             })
             .addCase(refreshUserThunk.fulfilled, (state, action) => {
                 state.user = action.payload;
                 state.isLoggedIn = true;
-                state.isRefreshing = false;        
+                state.isRefreshing = false;
             })
             .addCase(refreshUserThunk.pending, (state) => {
-                state.isRefreshing = true;             
+                state.isRefreshing = true;
             })
             .addCase(refreshUserThunk.rejected, (state) => {
                 state.isRefreshing = false;
