@@ -4,11 +4,11 @@ import { logInThunk, logOutThunk, refreshUserThunk, registerThunk } from "./oper
 
 const initialState = {
     user: {
-        name: '',
-        email: '',
+        name: null,
+        email: null,
     },
-    token: '',
-    isLogedIn: false,
+    token: null,
+    isLoggedIn: false,
     isRefreshing: false,
 };
 
@@ -19,22 +19,22 @@ const slice = createSlice({
         builder
             .addCase(registerThunk.fulfilled, (state, action) => {
                 state.user = action.payload.user;
-                state.isLogedIn = true;
+                state.isLoggedIn = true;
                 state.token = action.payload.token;
             })
             .addCase(logInThunk.fulfilled, (state, action) => {
                 state.user = action.payload.user;
-                state.isLogedIn = true;
+                state.isLoggedIn = true;
                 state.token = action.payload.token;
             })
             .addCase(logOutThunk.fulfilled, (state) => {
-                state.user = {name: '', email: ''};
-                state.isLogedIn = false;
-                state.token = '';
+                state.user = {name: null, email: null};
+                state.isLoggedIn = false;
+                state.token = null;
             })
             .addCase(refreshUserThunk.fulfilled, (state, action) => {
                 state.user = action.payload;
-                state.isLogedIn = true;
+                state.isLoggedIn = true;
                 state.isRefreshing = false;        
             })
             .addCase(refreshUserThunk.pending, (state) => {
